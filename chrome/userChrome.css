@@ -155,6 +155,7 @@
 }
 
 /* Bookmark Icon */
+
 #star-button {
   order: 0 !important;
   display: inherit !important;
@@ -176,6 +177,7 @@
 }
 
 /* Essentials Color Tweaks */
+
 #zen-essentials-container .tabbrowser-tab {
   @media (-moz-bool-pref: "zen.theme.essentials-favicon-bg") {
     &[visuallyselected] .tab-background {
@@ -274,22 +276,6 @@ tab[busy] {
   }
 }
 
-/* CTRL Tab Animations */
-#ctrlTab-panel {
-  --panel-background: var(--lwt-accent-color) !important;
-  transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.1) 0.2s !important;
-  scale: 0.7;
-}
-
-#ctrlTab-panel:has(.ctrlTab-preview:not([hidden="true"])) {
-  scale: 1 !important;
-}
-
-slot:nth-child(1) {
-  border-radius: 1em !important;
-  padding: 0 !important;
-}
-
 /* - URL Bar Loading Animation - */
 #urlbar:not([breakout-extend="true"]) {
 
@@ -372,6 +358,98 @@ slot:nth-child(1) {
   border: none !important;
   margin: 0px !important;
   border-radius: 8px;
+}
+
+/* PIP */
+
+@-moz-document url("chrome://global/content/pictureinpicture/player.xhtml") {
+	.control-item.control-button {
+		background-color: rgba(0, 0, 0, 0) !important;
+	}
+
+  :root {
+    border-radius: 20px !important;
+    overflow: hidden !important;
+  }
+
+  video {
+    border-radius: 20px !important;
+  }
+
+	#close, #unpip {
+		fill: white !important;
+		padding: 5px !important;
+		top: 2px !important;
+
+		&:hover {
+			&::after {
+				display: none !important;
+			}
+		}
+	}
+
+	#close {
+		left: auto !important;
+		right: 5px !important;
+	}
+
+	#unpip {
+		left: 5px !important;
+		right: auto !important;
+	}
+
+	#controls {
+		margin: 0 !important;
+		height: 100% !important;
+		width: 100% !important;
+
+		transition: background-color 160ms linear;
+
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.69) !important;
+		}
+	}
+
+	#controls-bottom-gradient {
+		display: none !important;
+	}
+
+	#controls-bottom {
+		display: flex;
+		flex-direction: column-reverse;
+		bottom: 5px !important;
+	}
+
+	/* progress bar */
+	.scrubber-no-drag {
+		display: flex !important;
+		margin: 0 !important;
+		height: 100% !important;
+	}
+
+	#scrubber::-moz-range-thumb {
+		width: 0 !important;
+		height: 0 !important;
+		border: none !important;
+	}
+
+	#scrubber {
+		height: 5px !important;
+		transition: all 160ms linear !important;
+		overflow: hidden;
+		padding: 0 !important;
+		border: 5px solid rgba(0, 0, 0, 0);
+
+		&:hover {
+			height: 8px !important;
+		}
+	}
+
+	#scrubber {
+		&::-moz-range-track, &::-moz-range-progress {
+			height: 100% !important;
+		}
+	}
 }
 
 
