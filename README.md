@@ -1,2 +1,2 @@
-# myinternet
-compilation of my custom zen settings
+# MyInternet
+Compilation of my custom Zen Settings
