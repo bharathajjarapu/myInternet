@@ -101,83 +101,8 @@
   gap: var(--essentials-gap) var(--essentials-gap) !important;
 }
 
-/* URL bar page animation */
-#browser:has(#urlbar[open][zen-floating-urlbar="true"]) .browserContainer {
-  pointer-events: none;
-  filter: blur(10px) brightness(70%) !important;
-}
-
-#urlbar[open][zen-floating-urlbar="true"] #urlbar-background {
-  border-radius: 1em !important;
-}
-
-/* URL bar Blurred*/
-#urlbar[open] {
-  & #urlbar-background {
-    backdrop-filter: blur(20px) brightness(0.7) !important;
-    background: rgba(0, 0, 0, 0.2) !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  }
-}
-
-/* URL Bar UI Tweaks */
-#tracking-protection-icon-container {
-  display: none !important;
-}
-
-#identity-box {
-  order: 0 !important;
-  width: 28px;
-}
-
-#identity-icon-box {
-  opacity: 1 !important;
-  margin-left: 0 !important;
-  transform: none !important;
-}
-
-#urlbar[breakout-extend="false"]>.urlbar-input-container {
-  padding-left: 4px !important;
-}
-
-#identity-permission-box {
-  display: none !important;
-}
-
-#tab-preview-panel {
-  display: none !important;
-}
-
-.urlbarView-body-inner {
-  border: none !important;
-}
-
-/* Bookmark Icon */
-
-#star-button {
-  order: 0 !important;
-  display: inherit !important;
-  list-style-image: url("copy.svg") !important;
-  opacity: 0.5 !important;
-  /* For empty/not bookmarked state */
-}
-
-#star-button[starred="true"] {
-  list-style-image: url("copy.svg") !important;
-  opacity: 1 !important;
-  /* For filled/bookmarked state */
-}
-
-:root[zen-single-toolbar='true'] {
-  #star-button-box {
-    display: inherit !important;
-  }
-}
 
 /* Essentials Color Tweaks */
-
 #zen-essentials-container .tabbrowser-tab {
   @media (-moz-bool-pref: "zen.theme.essentials-favicon-bg") {
     &[visuallyselected] .tab-background {
